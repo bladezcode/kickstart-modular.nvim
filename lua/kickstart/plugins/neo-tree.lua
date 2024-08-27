@@ -11,14 +11,27 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal' },
+    { '<C-b>', ':Neotree reveal<CR>', desc = 'NeoTree reveal' },
   },
   opts = {
+
     filesystem = {
+      follow_current_file = {
+        enabled = true, -- This will find and focus the file in the active buffer every time
+      },
+      use_libuv_file_watcher = true,
+      buffers = {
+        follow_current_file = true, -- Follow files in buffers too
+      },
+      filtered_items = {
+        hide_dotfiles = false, -- Show dotfiles (hidden files that start with a dot)
+        hide_gitignored = false, -- Show files ignored by Git
+        hide_hidden = false, -- Show other hidden files
+      },
       window = {
-        width = 30,
+        width = 25,
         mappings = {
-          ['\\'] = 'close_window',
+          ['<C-b>'] = 'close_window',
         },
       },
     },

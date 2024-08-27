@@ -31,7 +31,13 @@ return {
       statusline.section_location = function()
         return '%2l:%-2v'
       end
-
+      vim.cmd [[
+        augroup StatuslineHighlight
+          autocmd!
+          autocmd ColorScheme * highlight StatusLine guibg=#1e1e1e guifg=#ffffff
+          autocmd ColorScheme * highlight StatusLineNC guibg=#2e2e2e guifg=#bbbbbb
+        augroup END
+      ]]
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
