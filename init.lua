@@ -5,8 +5,8 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 if vim.g.neovide then
-  vim.o.guifont = 'JetbrainsMono Nerd Font Propo:h14'
-  vim.opt.linespace = -2
+  vim.o.guifont = 'VictorMono Nerd Font:h14'
+  vim.opt.linespace = -7
 end
 
 vim.api.nvim_create_autocmd({ 'UIEnter', 'ColorScheme' }, {
