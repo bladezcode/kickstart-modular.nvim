@@ -53,6 +53,11 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- vim.opt.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
+-- vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
+-- vim.opt.expandtab = true -- Use spaces instead of tabs
+-- vim.opt.softtabstop = 4 -- Number of spaces that a <Tab> counts for while performing editing operations
+--
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
@@ -62,4 +67,5 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.opt.linespace = 2
 -- vim: ts=2 sts=2 sw=2 et

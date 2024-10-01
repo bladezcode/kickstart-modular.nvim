@@ -168,6 +168,10 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
+        --
+        html = {
+          filetypes = { 'html', 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
+        },
         pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -177,7 +181,17 @@ return {
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
-        --
+        emmet_ls = {
+          init_options = {
+            html = {
+              options = {
+                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                ['bem.enabled'] = true,
+              },
+            },
+          },
+        },
+        cssls = {},
         jedi_language_server = {},
         lua_ls = {
           -- cmd = {...},

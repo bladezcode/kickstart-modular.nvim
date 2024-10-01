@@ -24,16 +24,32 @@ vim.api.nvim_create_autocmd('UILeave', {
     io.write '\027]111\027\\'
   end,
 })
--- [[ Setting options ]]
+
+-- Set default indentation (4 spaces)
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+
+-- Filetype-specific indentation settings
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'html', 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+  callback = function()
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+    vim.bo.softtabstop = 4
+  end,
+})
+
+-- Add more FileType autocmds for other languages as needed
+
 require 'options'
 
--- [[ Basic Keymaps ]]
 require 'keymaps'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
 
--- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
 -- The line beneath this is called `modeline`. See `:help modeline`

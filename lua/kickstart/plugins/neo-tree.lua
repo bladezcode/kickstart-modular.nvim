@@ -11,7 +11,7 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '<C-b>', ':Neotree reveal<CR>', desc = 'NeoTree reveal' },
+    { '<leader>e', ':Neotree toggle<CR>', desc = 'NeoTree reveal' },
   },
   opts = {
 
@@ -29,10 +29,7 @@ return {
         hide_hidden = false, -- Show other hidden files
       },
       window = {
-        width = 25,
-        mappings = {
-          ['<C-b>'] = 'close_window',
-        },
+        width = 28,
       },
     },
   },
