@@ -26,27 +26,20 @@ return {
     local logo = vim.g.neovide and logo_neovide or logo_default
     -- custom config
     vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#b4d4ad' })
+    logo = string.rep('\n', 6) .. logo .. '\n\n'
     require('dashboard').setup {
-      -- theme = 'doom',
+
+      theme = 'doom',
       config = {
         center = {
-          {
-            icon = '',
-            icon_hl = 'group',
-            desc = 'description',
-            desc_hl = 'group',
-            key = 'shortcut key in dashboard buffer not keymap !!',
-            key_hl = 'group',
-            key_format = ' [%s]', -- `%s` will be substituted with value of `key`
-            action = '',
-          },
+          { action = 'ene | startinsert', desc = ' New File                                        ', icon = ' ', icon_hl = 'String', key = 'n' },
+          { action = 'Telescope find_files', desc = ' Find File', icon = '󰱼 ', icon_hl = 'String', key = 'f' },
+          { action = 'lua MiniFiles.open()', desc = ' Browse Files', icon_hl = 'String', icon = ' ', key = 'e' },
+          { action = 'qa', desc = ' Quit', icon = ' ', icon_hl = 'String', key = 'q' },
         },
-        header = vim.split(string.rep('\n', 3) .. logo, '\n'),
-        shortcut = {
-          { desc = '[ Github]', group = 'DashboardShortCut' },
-          { desc = '[ bladezcode]', group = 'DashboardShortCut' },
-        },
+        header = vim.split(logo, '\n'),
       },
+
       hide = {
         statusline = true,
       },

@@ -9,19 +9,23 @@ return {
     'catppuccin/nvim',
     name = 'catppuccin',
     opts = {
+      flavour = 'mocha',
+      -- background = ''
       -- style = 'dark',
-      transparent_background = not vim.g.neovide,
+      transparent_background = true,
+      -- transparent = true,
+      -- floating_border = 'on',
       -- highlights = {
       --   NeoTreeNormal = { bg = '#1d2026' }, -- Custom background color
       -- },
     },
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
+      -- require('onedark').load()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'catppuccin'
-
       -- -- Remove background color for all highlighting groups
       -- vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
       -- vim.cmd [[hi NormalNC guibg=NONE ctermbg=NONE]]
